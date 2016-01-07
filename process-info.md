@@ -4,11 +4,10 @@
 
 #### Process Management
 
-|        |    Tool     | Description  | When to use  | Notes |
-| ---------- |---------------| ----------|-------|---------|
-| strace |  Any time a detailed process trace is required, especially when
-system call-level tracing is required. Very useful to see calls to system calls
-such as open(), read(), and write().|  | Caution: Avoid running it in PROD since it can slow down or even crash the process being traced.
+<b> strace </b>
+  When to run: Any time a detailed process trace is required, especially when system call-level tracing is required. Very useful to see calls to system calls such as open(), read(), and write().
+
+Caution: Avoid running it in PROD since it can slow down or even crash the process being traced.
 
 
 #### References
