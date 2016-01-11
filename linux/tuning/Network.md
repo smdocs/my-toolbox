@@ -107,3 +107,14 @@ ip route change $defrt initcwnd 10
 Once completed all these changes, bundle a new machine image, or integrate these changes into a system management package such as Chef or Puppet.
 
 #### Resources
+- [Linix Network Tuning 2013](http://www.nateware.com/linux-network-tuning-for-2013.html#.VBjahC5dVyE)
+- [US Dept of Energy Guide to Linux TCP Tuning](http://fasterdata.es.net/host-tuning/linux/)
+- [Linux tuning parameters used by Last.fm](https://russ.garrett.co.uk/2009/01/01/linux-kernel-tuning/)
+- [Definitions of Linux TCP kernel variables](https://www.frozentux.net/ipsysctl-tutorial/chunkyhtml/tcpvariables.html)
+- [Understanding ephemeral ports](http://www.ncftp.com/ncftpd/doc/misc/ephemeral_ports.html)
+- [In-depth post by CDN Planet on TCP slow start (with tests!)](http://www.cdnplanet.com/blog/tune-tcp-initcwnd-for-optimum-performance/)
+- [Google Research Paper Proposing a Default Congestion Window of 10 Segments](http://research.google.com/pubs/pub36640.html)
+- [Determining a safe value for tcp_tw_reuse (ServerFault)](http://serverfault.com/questions/234534/is-it-dangerous-to-change-the-value-of-proc-sys-net-ipv4-tcp-tw-reuse)
+- [Dropping of connections with tcp_tw_recycle (StackOverflow)](http://stackoverflow.com/questions/8893888/dropping-of-connections-with-tcp-tw-recycle)
+- [Tuning servers for load testing with Bender](https://github.com/pinterest/jbender)
+
