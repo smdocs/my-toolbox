@@ -107,7 +107,7 @@ ip route change $defrt initcwnd 10
 Once completed all these changes, bundle a new machine image, or integrate these changes into a system management package such as Chef or Puppet.
 
 #### Resources
-- [Linix Network Tuning 2013](http://www.nateware.com/linux-network-tuning-for-2013.html#.VBjahC5dVyE)
+- [Linux Network Tuning 2013](http://www.nateware.com/linux-network-tuning-for-2013.html#.VBjahC5dVyE)
 - [US Dept of Energy Guide to Linux TCP Tuning](http://fasterdata.es.net/host-tuning/linux/)
 - [Linux tuning parameters used by Last.fm](https://russ.garrett.co.uk/2009/01/01/linux-kernel-tuning/)
 - [Definitions of Linux TCP kernel variables](https://www.frozentux.net/ipsysctl-tutorial/chunkyhtml/tcpvariables.html)
