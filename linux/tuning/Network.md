@@ -10,7 +10,7 @@ The parameters that requires tuning at a bare minimum are
  
 - Increase the port range for ephemeral (outgoing) ports
 
-- Increase the read/write TCP buffers (tcp_rmem and tcp_wmem) to allow for larger window sizes.
+- Increase the read/write TCP buffers (```tcp_rmem``` and ```tcp_wmem```) to allow for larger window sizes.
 
 - Decrease the VM swappiness parameter, which discourages the kernel from swapping memory to disk.
  
