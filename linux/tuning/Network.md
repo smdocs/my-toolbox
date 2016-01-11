@@ -5,7 +5,9 @@ For a high-performance system trying to serve thousands of concurrent network cl
 The parameters that requires tuning at a bare minimum are
 
 - Increase Max open files - increasing this limit will ensure that lingering TIME_WAIT sockets and other consumers of file descriptors don’t impact our ability to handle lots of concurrent requests.
-- Decrease the time that sockets stay in TIME_WAIT
+
+- Decrease the time that sockets stay in TIME-WAIT -  by lowering ```tcp_fin_timeout``` from its default of 60 seconds to 10. One can lower this even further, but too low, and you can run into socket close errors in networks with lots of jitter. We will also set tcp_tw_reuse to tell the kernel it can reuse sockets in the TIME_WAIT state.
+ 
 - Increase the port range for ephemeral (outgoing) ports
 - Increase the read/write TCP buffers (tcp_rmem and tcp_wmem) to allow for larger window sizes.
 - Decrease the VM swappiness parameter, which discourages the kernel from swapping memory to disk.
