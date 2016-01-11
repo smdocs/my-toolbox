@@ -64,38 +64,6 @@ net.ipv4.conf.all.accept_source_route = 0
 # Log packets with impossible addresses for security
 net.ipv4.conf.all.log_martians = 1
 ```
-Here is another slightly modiefied version that has the folllowing changes
-```
-# /etc/sysctl.conf
-# Increase system file descriptor limit
-fs.file-max = 100000
-
-# Increase ephermeral IP ports
-net.ipv4.ip_local_port_range = 10000 65000
-
-# Increase Linux autotuning TCP buffer limits
-# Set max to 16MB for 1GE and 32M (33554432) or 54M (56623104) for 10GE
-# Don't set tcp_mem itself! Let the kernel scale it based on RAM.
-net.core.rmem_max = 16777216
-net.core.wmem_max = 16777216
-net.core.rmem_default = 16777216
-net.core.wmem_default = 16777216
-net.core.optmem_max = 40960
-net.ipv4.tcp_rmem = 4096 87380 16777216
-net.ipv4.tcp_wmem = 4096 65536 16777216
-
-# Make room for more TIME_WAIT sockets due to more clients,
-# and allow them to be reused if we run out of sockets
-# Also increase the max packet backlog
-net.core.netdev_max_backlog = 50000
-net.ipv4.tcp_max_syn_backlog = 30000
-net.ipv4.tcp_max_tw_buckets = 2000000
-net.ipv4.tcp_tw_reuse = 1
-net.ipv4.tcp_fin_timeout = 10
-
-# Disable TCP slow start on idle connections
-net.ipv4.tcp_slow_start_after_idle = 0
-```
 Since some of these settings can be cached by networking services, it’s best to reboot to apply them properly (sysctl -p does not work reliably).
 
 #### Tuning Open File Descriptors
@@ -154,4 +122,5 @@ Once completed all these changes, bundle a new machine image, or integrate these
 - [Determining a safe value for tcp_tw_reuse (ServerFault)](http://serverfault.com/questions/234534/is-it-dangerous-to-change-the-value-of-proc-sys-net-ipv4-tcp-tw-reuse)
 - [Dropping of connections with tcp_tw_recycle (StackOverflow)](http://stackoverflow.com/questions/8893888/dropping-of-connections-with-tcp-tw-recycle)
 - [Tuning servers for load testing with Bender](https://github.com/pinterest/jbender)
+- [Linux Kernel Parameters - xconfig](https://www.linuxvoice.com/linux-kernel-parameters/)
 
