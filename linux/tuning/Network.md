@@ -9,8 +9,11 @@ The parameters that requires tuning at a bare minimum are
 - Decrease the time that sockets stay in TIME-WAIT -  by lowering ```tcp_fin_timeout``` from its default of 60 seconds to 10. One can lower this even further, but too low, and you can run into socket close errors in networks with lots of jitter. We will also set tcp_tw_reuse to tell the kernel it can reuse sockets in the TIME_WAIT state.
  
 - Increase the port range for ephemeral (outgoing) ports
+
 - Increase the read/write TCP buffers (tcp_rmem and tcp_wmem) to allow for larger window sizes.
+
 - Decrease the VM swappiness parameter, which discourages the kernel from swapping memory to disk.
+ 
 - Increase the TCP congestion window, and disable reverting to TCP slow start after the connection is idle.
 
 #### Edit the following kernel parameters in /etc/sysctl.conf ( Don't forget to back up the default file )
