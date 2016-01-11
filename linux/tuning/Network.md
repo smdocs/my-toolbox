@@ -86,3 +86,24 @@ And finally, /etc/pam.d/sshd needs to load the modified limits.conf:
 session required pam_limits.so
 ```
 Run ```ulimit -n``` to see the file descriptor set to the above value.
+
+#### TCP Congestion Window
+Finally, let’s increase the TCP congestion window from 1 to 10 segments. This is done on the interface, which makes it a more manual process that our sysctl settings. First, use ip route to find the default route, shown in bold below:
+```
+ ip route
+default via 10.0.1.1 dev eth0  proto static 
+10.0.1.0/24 dev eth0  proto kernel  scope link  src 10.0.1.193  metric 1 
+192.168.122.0/24 dev virbr0  proto kernel  scope link  src 192.168.122.1 
+```
+Run the following command to change the ip route , adding ```initcwnd 10``` at the end
+```
+$ sudo ip route change default via 10.0.1.0/24 dev eth0  proto kernel initcwnd 10
+```
+To make this persistent across reboots, you’ll need to add a few lines of bash like the following to a startup script somewhere. Often the easiest candidate is just pasting these lines into <b> /etc/rc.local:</b>
+```
+defrt=`ip route | grep "^default" | head -1`
+ip route change $defrt initcwnd 10
+```
+Once completed all these changes, bundle a new machine image, or integrate these changes into a system management package such as Chef or Puppet.
+
+#### Resources
