@@ -60,3 +60,29 @@ net.ipv4.conf.all.accept_source_route = 0
 net.ipv4.conf.all.log_martians = 1
 ```
 Since some of these settings can be cached by networking services, it’s best to reboot to apply them properly (sysctl -p does not work reliably).
+
+#### Tuning Open File Descriptors
+In addition to the Linux ```fs.file-max kernel``` setting above,increase the file descriptor limits. The reason is the above just sets an absolute max, but we still need to tell the shell what our per-user session limits are.
+
+So, first edit /etc/security/limits.conf to increase our session limits:
+```
+# /etc/security/limits.conf
+# allow all users to open 100000 files
+# alternatively, replace * with an explicit username
+* soft nofile 100000
+* hard nofile 100000
+```
+Next, /etc/ssh/sshd_config needs to make sure to use PAM:
+```
+# /etc/ssh/sshd_config
+# ensure we consult pam
+UsePAM yes
+```
+
+And finally, /etc/pam.d/sshd needs to load the modified limits.conf:
+```
+# /etc/pam.d/sshd
+# ensure pam includes our limits
+session required pam_limits.so
+```
+Run ```ulimit -n``` to see the file descriptor set to the above value.
