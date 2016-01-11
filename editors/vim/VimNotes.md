@@ -1435,3 +1435,5 @@ Also see [fuzzy finders](#fuzzy-finders).
 - [surround](https://github.com/tpope/vim-surround)
 - [unicode.vim](https://github.com/chrisbra/unicode.vim)
 
+####References
+- [Vim Galore](https://github.com/smdocs/vim-galore)
