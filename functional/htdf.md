@@ -123,5 +123,7 @@ Note that:
 
 Run the program and make sure all the tests pass, if not debug until they do. Many of the problems you might have had will already have been fixed because of following the "run early, run often" approach. But if not, debug until everything works.
 
+#### References
 
+1. [Edx Course: Systematic Program Design](https://courses.edx.org/courses/course-v1:UBCx+SPD1x+1T2016/courseware/d4b5b9454a3e47689c866b557162d73d/348790b506ce479789ffd6c227d1bc9d/)
 
