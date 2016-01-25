@@ -3,7 +3,7 @@
 The How to Design Functions (HtDF) recipe is a design method that enables systematic design of functions. 
 The HtDF recipe consists of the following steps:
 
-- Signature, purpose and stub.
+- [Signature, purpose and stub]()
 - Define examples, wrap each in check-expect.
 - Template and inventory.
 - Code the function body.
@@ -20,6 +20,7 @@ definition first and then go back and do the other recipe elements.
 - Throughout the HtDF process be sure to "run early and run often". Run your program whenever it is well-formed. 
 The more often you run the sooner you can find mistakes. Finding mistakes one at a time is much easier than waiting until 
 later when the mistakes can compound and be more confusing. Run, run, run!
+
 
 #### Signature, purpose and stub.
 
