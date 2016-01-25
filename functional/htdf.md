@@ -37,37 +37,60 @@ Note that the stub is a syntactically complete function definition that produces
 (define (double n) 0) ; this is a stub
 
 ```
-#### Define examples, wrap each one in check-expect.
+Template and inventory
 
-Write at least one example of a call to the function and the expected result the call should produce.
+Before coding the function body it is helpful to have a clear sense of what the function has to work with -- what is the contents of your bag of parts for coding this function? The template provides this.
 
-You will often need more examples, to help you better understand the function or to properly test the function. (If once your function works and you run the program some of the code is highlighted in black it means you definitely do not have enough examples.) If you are unsure how to start writing examples use the combination of the function signature and the data definition(s) to help you generate examples. Often the example data from the data definition is useful, but it does not necessarily cover all the important cases for a particular function.
+For primitive data like numbers, strings and images the body of the template is simply (... x) where x is the name of the parameter to the function.
 
-The first role of an example is to help you understand what the function is supposed to do. If there are boundary conditions be sure to include an example of them. If there are different behaviours the function should have, include an example of each. Since they are examples first, you could write them in this form:
-
-```
- ;; (double 0) should produce 0
- ;; (double 1) should produce 2
- ;; (double 2) should produce 4
- 
- ```
- When you write examples it is sometimes helpful to write not just the expected result, but also how it is computed. For example, you might write the following instead of the above:
+Once the template is done the stub should be commented out.
 
 ```
-;; (double 0) should produce (* 0 2)
-;; (double 1) should produce (* 1 2)
-;; (double 2) should produce (* 2 2)
-
-```
-DrRacket gives us a better way to write them, by enclosing them in check-expect. This will allow DrRacket to check them automatically when the function is complete. (In technical terms it will turn the examples into unit tests.)
-
-```drracket
 ;; Number -> Number
 ;; produces n times 2
 (check-expect (double 0) (* 0 2))
 (check-expect (double 1) (* 1 2))
 (check-expect (double 3) (* 3 2))
 
-(define (double n)  0)  ; this is the stub
+;(define (double n) 0) ; this is the stub
+
+(define (double n)     ; this is the template
+  (... n))
 
 ```
+
+#### Code the function body
+
+Now complete the function body by filling in the template.
+
+Note that:
+
+- the signature tells you the type of the parameter(s) and the type of the data the function body must produce
+- the purpose describes what the function body must produce in English
+- the examples provide several concrete examples of what the function body must produce
+- the template tells you the raw material you have to work with
+- You should use all of the above to help you code the function body. In some cases further rewriting of examples might make it more clear how you computed certain values, and that may make it easier to code the function.
+
+```
+;; Number -> Number
+;; produces n times 2
+(check-expect (double 0) (* 0 2))
+(check-expect (double 1) (* 1 2))
+(check-expect (double 3) (* 3 2))
+
+;(define (double n) 0) ; this is the stub
+
+;(define (double n)    ; this is the template
+;  (... n))
+
+(define (double n)
+  (* n 2))
+
+```
+
+#### Test and debug until correct
+
+Run the program and make sure all the tests pass, if not debug until they do. Many of the problems you might have had will already have been fixed because of following the "run early, run often" approach. But if not, debug until everything works.
+
+
+
