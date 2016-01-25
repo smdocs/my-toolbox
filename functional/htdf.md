@@ -37,3 +37,37 @@ Note that the stub is a syntactically complete function definition that produces
 (define (double n) 0) ; this is a stub
 
 ```
+#### Define examples, wrap each one in check-expect.
+
+Write at least one example of a call to the function and the expected result the call should produce.
+
+You will often need more examples, to help you better understand the function or to properly test the function. (If once your function works and you run the program some of the code is highlighted in black it means you definitely do not have enough examples.) If you are unsure how to start writing examples use the combination of the function signature and the data definition(s) to help you generate examples. Often the example data from the data definition is useful, but it does not necessarily cover all the important cases for a particular function.
+
+The first role of an example is to help you understand what the function is supposed to do. If there are boundary conditions be sure to include an example of them. If there are different behaviours the function should have, include an example of each. Since they are examples first, you could write them in this form:
+
+```
+ ;; (double 0) should produce 0
+ ;; (double 1) should produce 2
+ ;; (double 2) should produce 4
+ 
+ ```
+ When you write examples it is sometimes helpful to write not just the expected result, but also how it is computed. For example, you might write the following instead of the above:
+
+```
+;; (double 0) should produce (* 0 2)
+;; (double 1) should produce (* 1 2)
+;; (double 2) should produce (* 2 2)
+
+```
+DrRacket gives us a better way to write them, by enclosing them in check-expect. This will allow DrRacket to check them automatically when the function is complete. (In technical terms it will turn the examples into unit tests.)
+
+```drracket
+;; Number -> Number
+;; produces n times 2
+(check-expect (double 0) (* 0 2))
+(check-expect (double 1) (* 1 2))
+(check-expect (double 3) (* 3 2))
+
+(define (double n)  0)  ; this is the stub
+
+```
