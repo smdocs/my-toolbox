@@ -27,3 +27,13 @@ Write the function signature, a one-line purpose statement and a function stub.
 
 A signature has the type of each argument, separated by spaces, followed by ->, followed by the type of result. 
 So a function that consumes an image and produces a number would have the signature Image -> Number.
+
+Note that the stub is a syntactically complete function definition that produces a value of the right type. If the type is Number it is common to use 0, if the type is String it is common to use "a" and so on. The value will not, in general, match the purpose statement. In the example below the stub produces 0, which is a Number, but only matches the purpose when double happens to be called with 0.
+
+```
+;; Number -> Number
+;; produces n times 2
+
+(define (double n) 0) ; this is a stub
+
+```
