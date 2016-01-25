@@ -38,7 +38,7 @@ Note that the stub is a syntactically complete function definition that produces
 (define (double n) 0) ; this is a stub
 
 ```
-Template and inventory
+#### Template and inventory
 
 Before coding the function body it is helpful to have a clear sense of what the function has to work with -- what is the contents of your bag of parts for coding this function? The template provides this.
 
