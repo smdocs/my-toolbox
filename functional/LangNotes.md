@@ -53,3 +53,6 @@ For example:
 #### Evaluation rules for a <i>local</i> expression
 
 #### Evaluation rules for a <i>s-expression</i> or shared expression
+
+#### References
+1. [The why of Y](http://www.dreamsongs.com/Files/WhyOfY.pdf)
