@@ -5,6 +5,19 @@
   - if is replaced with true or false question
   - cond is replaced with one answer
 
+#### Evaluation rules for a function call
+
+For a call to a defined function such as (bulb (string-append "r" "ed")):
+
+1. First reduce the operands to values (as for a call to a primitive). These values are called the arguments to the function.
+2. Replace the function call expression with the body of the function in which every occurrence of the parameter(s) has been replaced by the corresponding argument(s).
+
+For example:
+```
+(bulb (string-append "r" "ed"))
+(bulb "red")
+(circle 30 "solid" "red")
+```
 #### Evaluation rules of a <i>cond</i> expression
 
 ```
