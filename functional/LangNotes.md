@@ -59,3 +59,4 @@ For example:
 2. [The Structure of a Programming Language Revolution](http://www.dreamsongs.com/Files/Incommensurability.pdf)
 3. [The art of Lisp](http://www.dreamsongs.com/ArtOfLisp.html)
 4. [Racket Coding Guidelines](https://courses.edx.org/courses/course-v1:UBCx+SPD1x+1T2016/86a7af433b134f0a952b5614f5ad9a78/)
+5. [Racket Style Guide](http://www.ccs.neu.edu/home/matthias/Style/style/Units_of_Code.html)
