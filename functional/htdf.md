@@ -126,4 +126,5 @@ Run the program and make sure all the tests pass, if not debug until they do. Ma
 #### References
 
 1. [Edx Course: Systematic Program Design](https://courses.edx.org/courses/course-v1:UBCx+SPD1x+1T2016/courseware/d4b5b9454a3e47689c866b557162d73d/348790b506ce479789ffd6c227d1bc9d/)
+2. [Racket Topics](https://artyom.me/racket-topics)
 
