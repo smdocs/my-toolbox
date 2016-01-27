@@ -50,3 +50,6 @@ For example:
 
 "smaller"
 ```
+#### Evaluation rules for a <i>local</i> expression
+
+#### Evaluation rules for a <i>s-expression</i> or shared expression
