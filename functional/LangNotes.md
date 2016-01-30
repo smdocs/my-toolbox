@@ -51,6 +51,9 @@ For example:
 "smaller"
 ```
 #### Evaluation rules for a <i>local</i> expression
+- [x] Finish my changes
+- [ ] Push my commits to github
+- [ ] Open a pull request
 
 #### Evaluation rules for a <i>s-expression</i> or shared expression
 
