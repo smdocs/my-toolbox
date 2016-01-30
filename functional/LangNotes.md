@@ -13,7 +13,7 @@ For a call to a defined function such as (bulb (string-append "r" "ed")):
 2. Replace the function call expression with the body of the function in which every occurrence of the parameter(s) has been replaced by the corresponding argument(s).
 
 For example:
-```
+```racket
 (bulb (string-append "r" "ed"))
 (bulb "red")
 (circle 30 "solid" "red")
