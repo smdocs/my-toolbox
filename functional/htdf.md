@@ -31,7 +31,7 @@ So a function that consumes an image and produces a number would have the signat
 
 Note that the stub is a syntactically complete function definition that produces a value of the right type. If the type is Number it is common to use 0, if the type is String it is common to use "a" and so on. The value will not, in general, match the purpose statement. In the example below the stub produces 0, which is a Number, but only matches the purpose when double happens to be called with 0.
 
-```
+```racket
 ;; Number -> Number
 ;; produces n times 2
 
@@ -44,19 +44,19 @@ Write at least one example of a call to the function and the expected result the
 You will often need more examples, to help you better understand the function or to properly test the function. (If once your function works and you run the program some of the code is highlighted in black it means you definitely do not have enough examples.) If you are unsure how to start writing examples use the combination of the function signature and the data definition(s) to help you generate examples. Often the example data from the data definition is useful, but it does not necessarily cover all the important cases for a particular function.
 
 The first role of an example is to help you understand what the function is supposed to do. If there are boundary conditions be sure to include an example of them. If there are different behaviours the function should have, include an example of each. Since they are examples first, you could write them in this form:
-```
+```racket
 ;; (double 0) should produce 0
 ;; (double 1) should produce 2
 ;; (double 2) should produce 4
 ```
 When you write examples it is sometimes helpful to write not just the expected result, but also how it is computed. For example, you might write the following instead of the above:
-```
+```racket
 ;; (double 0) should produce (* 0 2)
 ;; (double 1) should produce (* 1 2)
 ;; (double 2) should produce (* 2 2)
 ```
 While the above form satisfies our need for examples, DrRacket gives us a better way to write them, by enclosing them in check-expect. This will allow DrRacket to check them automatically when the function is complete. (In technical terms it will turn the examples into unit tests.)
-```
+```racket
 ;; Number -> Number
 ;; produces n times 2
 (check-expect (double 0) (* 0 2))
@@ -76,7 +76,7 @@ For primitive data like numbers, strings and images the body of the template is 
 
 Once the template is done the stub should be commented out.
 
-```
+```racket
 ;; Number -> Number
 ;; produces n times 2
 (check-expect (double 0) (* 0 2))
@@ -102,7 +102,7 @@ Note that:
 - the template tells you the raw material you have to work with
 - You should use all of the above to help you code the function body. In some cases further rewriting of examples might make it more clear how you computed certain values, and that may make it easier to code the function.
 
-```
+```racket
 ;; Number -> Number
 ;; produces n times 2
 (check-expect (double 0) (* 0 2))
