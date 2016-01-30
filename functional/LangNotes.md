@@ -20,7 +20,7 @@ For example:
 ```
 #### Evaluation rules of a <i>cond</i> expression
 
-```
+```racket
 ; if there are no question/answer pairs signal error. In this case we have question/ans pairs
 ; so proceed to the next eval rule
 (cond [(> 1 2) "bigger"]
@@ -54,6 +54,8 @@ For example:
 - [x] Finish my changes
 - [ ] Push my commits to github
 - [ ] Open a pull request
+
+@octocat :+1: This PR looks great - it's ready to merge! :shipit:
 
 #### Evaluation rules for a <i>s-expression</i> or shared expression
 
