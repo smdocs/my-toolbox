@@ -3,3 +3,4 @@ Contains documents, use cases and resources for debugging issues in a UNIX/Linux
 
 #### Resources
 - [PinInterest github](https://github.com/pinterest)
+- [Visually Explained](http://setosa.io/#/)
