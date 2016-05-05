@@ -20,7 +20,9 @@
   | Operation       | strace command         | Notes | 
   | --------------  |------------------------| ----------|
   |List all open files for a specific process with PID=1234 | ```$ lsof -p 1234``` | Pipe to grep if you a looking for any specific pattern  |
-  List network connections in use by a specific process with  PID=1234 | ```$ lsof -i -a -p 1234``` |  |
+  |List all network connections | ```$lsof -i OR lsof -i tcp OR lsof -i idp``` | Provide tcp/udp to see all tcp/udp connections|
+  |List network connections in use by a specific process with  PID=1234 | ```$ lsof -i -a -p 1234``` |  |
+  |List processes that are listening on port 22| ```$ lsof -i :22``` | |
   
   ##### 3. ```htop```
   
