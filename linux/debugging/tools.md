@@ -17,6 +17,10 @@
   
   
   ##### 2. ```lsof```
+  | Operation       | strace command         | Notes | 
+  | --------------  |------------------------| ----------|
+  |List all open files for a specific process with PID=1234 | ```$ lsof -p 1234``` | Pipe to grep if you a looking for any specific pattern  |
+  List network connections in use by a specific process with  PID=1234 | ```$ lsof -i -a -p 1234``` |  |
   
   ##### 3. ```htop```
   
