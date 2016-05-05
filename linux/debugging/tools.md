@@ -23,6 +23,11 @@
   |List all network connections | ```$lsof -i OR lsof -i tcp OR lsof -i idp``` | Provide tcp/udp to see all tcp/udp connections|
   |List network connections in use by a specific process with  PID=1234 | ```$ lsof -i -a -p 1234``` |  |
   |List processes that are listening on port 22| ```$ lsof -i :22``` | |
+  |List processes that have opened the specific file /var/log/syslog |```$ lsof /var/log/syslog```| |
+  |List processes that have opened files under the directory /var/log|```$ lsof +d  /var/log ```| |
+  |List files opened by processes named “sshd”| ```$ lsof -c sshd```| |
+  |List files opened by a specific user named “jdoe”| ```$ lsof -u jdoe```| Use ```lsof -u ^jdoe``` to exclude jdoe|
+  
   
   ##### 3. ```htop```
   
