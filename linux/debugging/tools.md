@@ -33,6 +33,21 @@
   
   ##### 4. ```tcpdump```
   
+  tcpdump is focused entirely on network traffic, while network traffic is only a subset of what sysdig covers. Many tcpdump use cases involve filtering, and tcpdump uses network-specific BPF filters.
+  
+  | Operation       | strace command         | Notes | 
+  | --------------  |------------------------| ----------|
+  |Capture packets from a particular interface eth0 (192.168.10.119) | ```$ tcpdump -i eth0	``` ||
+  |Capture only 100 packets	| ```$ tcpdump -c  100``` | |
+  |Display captured packets in ASCII	 | ```$tcpdump -A ``` |  |
+  |Display captured packets in HEX and ASCII| ```$ tcpdump -XX``` | |
+  |Capture packet data, writing it into into a file |```$ tcpdump -w saved.pcap```| |
+  |Read back saved packet data from a file|```$ tcpdump -r saved.pcap	```| |
+  |Capture only packets longer/smaller than 1024 bytes| ```$ tcpdump greater 1024```| |
+  |Capture only UDP or TCP packets| ```$ tcpdump udp```| Use ```tcpdump tcp``` to include tcp|
+  |Capture only packets going to/from a particular port|```$tcpdump port 22```||
+  
+  
   ##### 5. ```iftop```
 
 - ### Other Tools
