@@ -2,7 +2,7 @@
 
 #### 1. Using ```ltrace``` to debug memory leaks
 
-##### -  What's ltrace?
+##### - What's ltrace?
 ltrace traces library calls. This is cool because there are a lot of important things that happen that don't go through the kernel!
 For example -- one thing to note is that memory allocation with malloc and free aren't something that the operating system handles. OS gives you huge chunks of memory, but the business of keeping track of which bits of it have been allocated is up to the process to handle.
 
