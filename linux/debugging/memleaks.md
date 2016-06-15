@@ -52,3 +52,5 @@ do_thing_2.boxed();
 println!("this is after the leak");
 ```
 Guess what .boxed() means in this program? It means "do an allocation and put this on the heap"! Or in other words, malloc. We found the leaking allocation! Yay!
+
+##### Note - summarized from [Julia Evan's excellent article](http://jvns.ca/blog/2016/06/15/using-ltrace-to-debug-a-memory-leak/).
