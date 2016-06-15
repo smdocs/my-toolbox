@@ -2,7 +2,7 @@
 
 #### 1. Using ```ltrace``` to debug memory leaks
 
-- ##### What's ltrace?
+##### -  What's ltrace?
 ltrace traces library calls. This is cool because there are a lot of important things that happen that don't go through the kernel!
 For example -- one thing to note is that memory allocation with malloc and free aren't something that the operating system handles. OS gives you huge chunks of memory, but the business of keeping track of which bits of it have been allocated is up to the process to handle.
 
@@ -19,7 +19,7 @@ malloc(120)      = 0xf4d030
 ```
 This is neat! We can see that we allocated 1024 bytes of memory to get 0xf4d2c0 and then free that address shortly after.
 
-- ##### How do you find a memory leak?
+##### -  How do you find a memory leak?
 
 A memory leak is when either you forget to free memory even though nothing refers to it anymore (pretty common in C), or when you accidentally keep a reference around to memory even though you don't actually need it, and it's prevented from being garbage collected (pretty common in Python).
 Since this is Rust, and memory that isn't being referred to gets freed, we probably have the second kind of problem. But where?!
