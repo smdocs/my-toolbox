@@ -1,4 +1,4 @@
-#Tuning a Linux Network Stack
+# Tuning a Linux Network Stack
 
 For a high-performance system trying to serve thousands of concurrent network clients, default limits in a Linux system are far too low.
 
